@@ -2,22 +2,53 @@
   margin: 0;
 }
 
+.dark-mode .app {
+  background: black;
+}
+
+.dark-mode .MuiPaper-root {
+  color: white;
+}
+
+.dark-mode .MuiSelect-iconOutlined {
+  color: white;
+}
+
 body {
   background: #f5f6fa;
+}
+
+.dark-mode body {
+  background: black;
 }
 
 .app {
   display: flex;
   justify-content: space-evenly;
   padding: 20px;
+  min-height: 100vh;
 }
 
 .app__left {
   flex: 0.9;
+  height: 100%;
 }
 
 .app__dropdown {
   background-color: white;
+}
+
+.dark-mode .app__dropdown {
+  background-color: grey !important;
+  color: white !important;
+}
+
+.dark-mode .app__dropdown .MuiMenu-list {
+  background-color: grey !important;
+}
+
+.dark-mode .MuiSelect-outlined {
+  color: white;
 }
 
 .app__header {
@@ -32,6 +63,10 @@ body {
   font-size: 2rem;
 }
 
+.dark-mode .app__header > h1 {
+  color: white;
+}
+
 .app__stats {
   display: flex;
   justify-content: space-between;
@@ -40,6 +75,7 @@ body {
 .app__right {
   display: flex;
   flex-direction: column;
+  height: 812px;
 }
 
 .app__right.MuiCardContent-root {
@@ -50,6 +86,9 @@ body {
 
 .app__graph {
   flex-grow: 1;
+  background: white;
+  border-radius: 20px;
+  padding: 15px 10px 10px 10px;
 }
 
 .app__graphTitle {
@@ -57,8 +96,93 @@ body {
   margin-bottom: 20px;
 }
 
+/* Dark Mode */
+
+.light-mode {
+  transition: background-color 1.5s ease-out;
+}
+/* .dark-mode {
+  transition: background-color 1.5s ease-out;
+} */
+
+.toggle {
+  position: relative;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"].checkbox {
+  width: 40px;
+  height: 10px;
+  background: #555;
+  position: relative;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  vertical-align: 2px;
+  outline: none;
+}
+
+input[type="checkbox"].checkbox:checked + label {
+  left: 30px;
+}
+
+input[type="checkbox"].checkbox:focus-visible {
+  outline: solid 2px white;
+}
+
+input[type="checkbox"].checkbox + label {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: absolute;
+  left: 2px;
+  background: #fff;
+  opacity: 0.9;
+  background-color: #169dbf;
+}
+
+.toggle-container {
+  display: flex;
+  margin: 0 auto;
+}
+
+.toggle-container > span {
+  font-size: 1.2em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-top: 4px;
+  margin-right: 2px;
+}
+
+.toggle-container > span:last-child {
+  margin-top: 5px;
+}
+
 @media (max-width: 990px) {
   .app {
     flex-direction: column;
+  }
+
+  .map {
+    margin-bottom: 16px !important;
+  }
+  .MuiTypography-colorTextSecondary {
+    font-size: 14px !important;
+  }
+  .infoBox__cases {
+    font-size: 1.2rem !important;
+  }
+
+  .app__header > h1 {
+    flex: 0.7;
   }
 }

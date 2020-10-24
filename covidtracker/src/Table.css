@@ -6,6 +6,10 @@
   /* background-color: white; */
 }
 
+.dark-mode .table {
+  color: white;
+}
+
 .table tr {
   display: flex;
   justify-content: space-between;
@@ -17,4 +21,8 @@
 
 .table tr:nth-of-type(odd) {
   background-color: #f3f2f8;
+}
+
+.dark-mode .table tr:nth-of-type(odd) {
+  background-color: black;
 }

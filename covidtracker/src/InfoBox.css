@@ -21,6 +21,10 @@
   margin-top: 15px !important;
 }
 
+.dark-mode .infoBox__total {
+  color: white;
+}
+
 .infoBox--selected {
   border-top: 10px solid greenyellow;
 }
@@ -31,4 +35,20 @@
 
 .infoBox__cases--green {
   color: lightgreen !important;
+}
+
+.infoBox__title {
+  font-weight: bolder !important;
+}
+
+.dark-mode .MuiCardContent-root {
+  background-color: grey !important;
+}
+
+.dark-mode .MuiCard-root {
+  background: grey;
+}
+
+.dark-mode .MuiTypography-colorTextSecondary {
+  color: white;
 }
